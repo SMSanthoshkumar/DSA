@@ -1,0 +1,21 @@
+def bubble_sort(lst):
+    size=len(lst)
+    
+    for i in range(size-1):           #(size-1) after the 1st iteration the biggest element will be swapped at the last position,so need not to check the last element again
+        swapped = False               #initially we assume that gn list is not swapped
+        for j in range(size-1-i):
+            if lst[j]>lst[j+1]:
+                temp = lst[j]
+                lst[j] = lst[j+1]
+                lst[j+1] = temp
+                swapped = True        #after the first iteraion ,if the swapped flag is still false then the gn lst is already swapped list ex l1=[2,3,4]
+                                      #to reduce the no of iteration we use swapped flag
+        if not swapped:
+            break
+        
+        
+if __name__ =='__main__':
+    lst=[8,4,7,1,3,9,11,54,23]
+    lst=['dog','cat','zebra','ant','lion']
+    bubble_sort(lst)
+    print(lst)
